@@ -1,0 +1,50 @@
+{
+    "name": "lifespikes/scaffold",
+    "description": "Scaffold for creating new projects.",
+    "require": {
+        "php": "^8.1.2",
+        "friendsofphp/php-cs-fixer": "^3.8",
+        "lifespikes/monorepo-cli": "^0.7",
+        "lifespikes/php-beam": "^0.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lifespikes\\ScaffoldApp\\": "packages/scaffold-app/src"
+        }
+    },
+    "repositories": {
+        "packagist.org": false,
+        "private-packagist": {
+            "type": "composer",
+            "url": "https://repo.packagist.com/lifespikes/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lifespikes\\ScaffoldApp\\ScaffoldAppProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "phpcs": "vendor/bin/php-cs-fixer fix --config=vendor/lifespikes/php-beam/config/php-cs-fixer.php"
+    },
+    "config": {
+        "allow-plugins": {
+            "lifespikes/monorepo-cli": true
+        },
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "replace": {
+        "lifespikes/scaffold-app": "1.0.0"
+    },
+    "version": "1.0.0",
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

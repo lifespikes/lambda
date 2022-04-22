@@ -1,0 +1,18 @@
+# Dependencies
+vendor
+**/vendor
+
+node_modules
+**/node_modules
+
+# System, cache, and log files
+**/.DS_Store
+.php-cs-fixer.cache
+yarn-error.log
+**/yarn-error.log
+
+# Yarn is the preferred package manager
+package.lock
+
+# Configuration
+.env

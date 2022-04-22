@@ -1,0 +1,17 @@
+{
+    "name": "@lifespikes/scaffold",
+    "version": "v0.6.91",
+    "license": "UNLICENSED",
+    "description": "Scaffold for creating new projects.",
+    "scripts": {
+        "lint": "prettier-standard --changed --format --lint",
+        "dev": "vite"
+    },
+    "dependencies": {
+        "@lifespikes/js-beam": "^0.7.0"
+    },
+    "devDependencies": {
+        "prettier-standard": "^16.4.1",
+        "@lifespikes/js-beam-vite": "^0.7.0"
+    }
+}

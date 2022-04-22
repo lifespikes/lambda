@@ -1,0 +1,15 @@
+{
+    "name": "lifespikes/scaffold-app",
+    "autoload": {
+        "psr-4": {
+            "Lifespikes\\ScaffoldApp\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lifespikes\\ScaffoldApp\\ScaffoldAppProvider"
+            ]
+        }
+    }
+}

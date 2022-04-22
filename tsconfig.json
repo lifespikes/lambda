@@ -1,0 +1,21 @@
+{
+  "extends": "@lifespikes/js-beam/dist/tsconfig.json",
+  "include": [
+    "./packages/**/*.ts",
+    "./packages/**/*.tsx",
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/node_modules"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ES2021",
+    "paths": {
+      "@php-beam/*": [
+        "./*"
+      ]
+    }
+  }
+}
