@@ -1,14 +1,14 @@
 {
-    "name": "lifespikes/scaffold-app",
+    "name": "lambda/backend",
     "autoload": {
         "psr-4": {
-            "Lifespikes\\ScaffoldApp\\": "src"
+            "Lambda\\Backend\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Lifespikes\\ScaffoldApp\\ScaffoldAppProvider"
+                "Lambda\\Backend\\BackendProvider"
             ]
         }
     }

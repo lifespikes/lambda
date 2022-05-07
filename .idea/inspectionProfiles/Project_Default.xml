@@ -4,7 +4,7 @@
     <inspection_tool class="PhpArrayKeyDoesNotMatchArrayShapeInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PhpArrayShapeAttributeCanBeAddedInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="PhpCSFixerValidationInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
-      <option name="CODING_STANDARD" value="Custom" />
+      <option name="CODING_STANDARD" value="Symfony" />
       <option name="CUSTOM_RULESET_PATH" value="$PROJECT_DIR$/vendor/lifespikes/php-beam/config/php-cs-fixer.php" />
     </inspection_tool>
     <inspection_tool class="PhpNoReturnAttributeCanBeAddedInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />

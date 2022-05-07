@@ -1,6 +1,6 @@
 {
-    "name": "lifespikes/scaffold",
-    "description": "Scaffold for creating new projects.",
+    "name": "lifespikes/lambda",
+    "description": "Cloud suite of products for SMBs",
     "require": {
         "php": "^8.1.2",
         "friendsofphp/php-cs-fixer": "^3.8",
@@ -9,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lifespikes\\ScaffoldApp\\": "packages/scaffold-app/src"
+            "Lambda\\Backend\\": "packages/backend/src"
         }
     },
     "repositories": {
@@ -19,17 +19,13 @@
             "url": "https://repo.packagist.com/lifespikes/"
         }
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Lifespikes\\ScaffoldApp\\ScaffoldAppProvider"
-            ]
-        }
-    },
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
+        ],
+        "post-create-project-cmd": [
+            "composer ls-scaffold-post-create"
         ],
         "phpcs": "vendor/bin/php-cs-fixer fix --config=vendor/lifespikes/php-beam/config/php-cs-fixer.php"
     },
@@ -41,10 +37,23 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "replace": {
-        "lifespikes/scaffold-app": "1.0.0"
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lambda\\Backend\\BackendProvider"
+            ]
+        },
+        "monorepo-cli": {
+            "ignorePackages": [
+                "monorepo-cli"
+            ],
+            "owner": "lambda"
+        }
     },
-    "version": "1.0.0",
+    "replace": {
+        "lambda/backend": "self.version"
+    },
+    "version": "1.1.1",
     "minimum-stability": "dev",
     "prefer-stable": true
 }
