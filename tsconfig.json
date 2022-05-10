@@ -5,6 +5,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "ES2021",
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+    "paths": {
+      "@php-beam/*": ["./*"],
+      "@spikeform/*": ["./packages/spikeform/src/*"]
+    }
   }
 }

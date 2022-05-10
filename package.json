@@ -1,12 +1,13 @@
 {
   "version": "v0.6.91",
+  "workspaces": [
+    "packages/frontend",
+    "packages/spikeform"
+  ],
   "private": true,
   "name": "@lifespikes/scaffold",
   "license": "UNLICENSED",
   "description": "Scaffold for creating new projects.",
-  "workspaces": [
-    "packages/frontend"
-  ],
   "scripts": {
     "workspace:create": "js-beam-cli create-workspace",
     "lint": "prettier-standard --changed --format --lint",
