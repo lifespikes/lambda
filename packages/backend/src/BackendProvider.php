@@ -24,5 +24,9 @@ class BackendProvider extends ServiceProvider
         Route::get('/spikeform', function () {
             return Inertia::render('Spikeform');
         });
+
+        Route::get('/theme', function () {
+            return Inertia::render('Theme');
+        });
     }
 }
