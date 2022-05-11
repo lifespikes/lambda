@@ -1,14 +1,12 @@
 import {
   Box,
   Button,
-  ButtonSpinner,
   Code,
   Heading,
   HStack,
   Stack,
   Text,
 } from '@chakra-ui/react'
-import SpikeButton from '../components/SpikeButton'
 
 const Theme = () => {
   return (
