@@ -1,5 +1,4 @@
 /*
- * PayrollGoat - HCM Software built on the Zeal Payroll API
  *
  * Copyright (c) LifeSpikes, LLC. 2022.
  *
