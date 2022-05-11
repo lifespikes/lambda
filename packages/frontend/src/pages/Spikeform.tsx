@@ -1,5 +1,5 @@
 import { Button, VStack } from '@chakra-ui/react'
-import Spikeform, { useSpikeForm } from '@spikeform/index'
+import Spikeform, { useSpikeForm } from '@spikeform/react'
 
 const SpikeTest = () => {
   const form = useSpikeForm(
