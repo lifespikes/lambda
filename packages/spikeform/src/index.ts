@@ -1,1 +1,5 @@
-export default () => console.log('Hello world :)');
+import SpikeForm from './components/SpikeForm'
+import useSpikeForm from './hooks/useSpikeForm'
+
+export { useSpikeForm }
+export default SpikeForm
