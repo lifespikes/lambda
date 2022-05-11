@@ -7,7 +7,7 @@ const Home: FC = () => {
   return (
     <>
       <h1>Hello World</h1>
-      <Button onClick={() => alert.error({ title: 'pene' })}>Click me</Button>
+      <Button onClick={() => alert.error({ title: 'hi' })}>Click me</Button>
     </>
   )
 }
