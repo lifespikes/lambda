@@ -28,8 +28,20 @@ export const ThemeButton = {
       _hover: {
         bg: 'brand.softDark',
       },
+      _active: {
+        bg: 'brand.dark',
+      },
+      _focus: {
+        boxShadow: 'none',
+      },
     },
     link: {
+      fontWeight: 'hairline',
+      color: 'white',
+      fontSize: 'sm',
+      _active: {
+        color: 'gray.300',
+      },
       _focus: {
         boxShadow: 'none',
       },

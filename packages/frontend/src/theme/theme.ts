@@ -9,9 +9,6 @@ export default extendTheme({
     heading: 'Poppins, sans-serif',
     body: 'Poppins, sans-serif',
   },
-  fontWeights: {
-    bold: 600,
-  },
   colors: {
     brand: {
       primary: '#232189',
