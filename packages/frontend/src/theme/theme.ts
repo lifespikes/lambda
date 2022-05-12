@@ -17,6 +17,7 @@ export default extendTheme({
       softSecondary: '#6563e9',
       dark: '#1F2937',
       softDark: '#2e3d52',
+      offWhite: '#fafafa',
     },
   },
   semanticTokens: {

@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Code,
+  Divider,
   Heading,
   HStack,
   Stack,
@@ -15,6 +16,10 @@ const Theme = () => {
       <Navbar />
       <Stack p={10}>
         <Heading>Colors</Heading>
+        <Text fontSize={'xs'}>
+          <Code fontSize={'xs'}>brand.offWhite</Code> it's barely noticeable
+          here. But it's useful for things like backgrounds, borders or cards.
+        </Text>
         <Stack direction={{ base: 'column', lg: 'row' }}>
           {colors.map((c) => (
             <HStack key={c.value}>
@@ -25,6 +30,7 @@ const Theme = () => {
                 width='50px'
                 borderRadius='50%'
               />
+              <Divider borderColor='brand.dark' orientation='vertical' />
             </HStack>
           ))}
         </Stack>
@@ -55,6 +61,9 @@ const Theme = () => {
 export default Theme
 
 const colors = [
+  {
+    value: 'offWhite',
+  },
   {
     value: 'primary',
   },

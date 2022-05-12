@@ -31,17 +31,20 @@ const MobileNav: FC<NavMenuProps> = (props) => {
         aria-label='hamburger'
         icon={<HamburgerIcon />}
         display={{ base: 'inherit', lg: 'none' }}
+        _hover={{ bg: 'brand.dark' }}
       />
       <Drawer
         isOpen={isOpen}
-        placement='right'
+        placement='left'
         onClose={onClose}
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
         <DrawerContent bg={'brand.dark'}>
           <DrawerCloseButton color={'white'} />
-          <DrawerHeader />
+          <DrawerHeader>
+            <Text color={'white'}>Menu</Text>
+          </DrawerHeader>
           <DrawerBody>
             <Flex>
               <Stack spacing={10}>
