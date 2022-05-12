@@ -5,6 +5,7 @@
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/poppins": "^4.5.8",
     "@inertiajs/inertia": "^0.11.0",
     "@inertiajs/inertia-react": "^0.8.0",
     "@inertiajs/progress": "^0.2.7",

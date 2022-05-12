@@ -5,6 +5,10 @@ export default extendTheme({
   components: {
     Button: ThemeButton,
   },
+  fonts: {
+    heading: 'Poppins, sans-serif',
+    body: 'Poppins, sans-serif',
+  },
   fontWeights: {
     bold: 600,
   },
