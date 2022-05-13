@@ -2,7 +2,7 @@ import React from 'react'
 import { simpleInertiaApp } from '@lifespikes/js-beam'
 import { ChakraProvider } from '@chakra-ui/react'
 import { createRoot } from 'react-dom/client'
-import theme from '@frontend/theme/theme'
+import theme from '@/frontend/theme/theme'
 
 const Wrapper: React.FunctionComponent<{ children: React.ReactNode }> = ({
   children

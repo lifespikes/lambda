@@ -19,7 +19,7 @@
       "@php-beam/*": [
         "./*"
       ],
-      "@frontend/*": [
+      "@/frontend/*": [
         "./packages/frontend/src/*"
       ]
     }
