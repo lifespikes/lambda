@@ -2,6 +2,9 @@
 
 namespace Lambda\Customer\Contracts;
 
-interface Customer
+use Illuminate\Contracts\Support\Arrayable;
+
+interface Customer extends Arrayable
 {
+
 }

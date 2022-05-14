@@ -16,6 +16,7 @@ class BackendProvider extends ServiceProvider
     {
         PhpBeam::bindInertia();
 
-        Route::group(['middleware' => 'web', 'scopeBindings' => true], __DIR__.'/../routes/web.php');
+        // TODO: add web middleware
+        Route::group(['middleware' => [], 'scopeBindings' => true], __DIR__.'/../routes/web.php');
     }
 }

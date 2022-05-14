@@ -8,4 +8,4 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
-Route::group(['middleware' => [], 'prefix' => 'customer'], __DIR__.'/customer.php');
+Route::group(['middleware' => [], 'prefix' => 'customers'], __DIR__.'/customer.php');
