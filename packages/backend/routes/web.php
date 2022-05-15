@@ -7,4 +7,12 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
+Route::get('/spikeform', function () {
+    return Inertia::render('Spikeform');
+});
+
+Route::get('/theme', function () {
+    return Inertia::render('Theme');
+});
+
 Route::group(['middleware' => [], 'prefix' => 'customers'], __DIR__.'/customer.php');
