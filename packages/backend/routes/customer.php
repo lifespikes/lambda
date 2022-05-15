@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Lambda\Backend\Controllers\Customer\CustomerController;
 
-Route::group(['prefix' => '/', 'name' => 'customer.'], function () {
+Route::group(['prefix' => '/'], function () {
 
     // TODO: change this to a resource route. When I use a resource route, I get a 404 error.
     Route::get('/', [CustomerController::class, 'index'])->name('index');
