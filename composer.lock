@@ -2543,16 +2543,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "32a49eb2b38fe5e5c417ab748a45d0beaab97955"
+                "reference": "cb36fee279f7fca01d5d9399ddd1b37e48e2eca1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/32a49eb2b38fe5e5c417ab748a45d0beaab97955",
-                "reference": "32a49eb2b38fe5e5c417ab748a45d0beaab97955",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/cb36fee279f7fca01d5d9399ddd1b37e48e2eca1",
+                "reference": "cb36fee279f7fca01d5d9399ddd1b37e48e2eca1",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2651,7 +2651,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-07T22:37:05+00:00"
+            "time": "2022-05-14T15:37:39+00:00"
         },
         {
             "name": "league/config",
@@ -7672,16 +7672,16 @@
         },
         {
             "name": "symplify/monorepo-builder",
-            "version": "10.2.3",
+            "version": "10.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/monorepo-builder.git",
-                "reference": "82f266d8d8e79a3a5dfd5ffb36f78eeebc76f73f"
+                "reference": "a2f1a732f40961c3be41e6743a319b4070e3515b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/monorepo-builder/zipball/82f266d8d8e79a3a5dfd5ffb36f78eeebc76f73f",
-                "reference": "82f266d8d8e79a3a5dfd5ffb36f78eeebc76f73f",
+                "url": "https://api.github.com/repos/symplify/monorepo-builder/zipball/a2f1a732f40961c3be41e6743a319b4070e3515b",
+                "reference": "a2f1a732f40961c3be41e6743a319b4070e3515b",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -7691,7 +7691,7 @@
                 ]
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "bin": [
                 "bin/monorepo-builder"
@@ -7708,7 +7708,7 @@
             ],
             "description": "Prefixed version of Not only Composer tools to build a Monorepo.",
             "support": {
-                "source": "https://github.com/symplify/monorepo-builder/tree/10.2.3"
+                "source": "https://github.com/symplify/monorepo-builder/tree/10.2.5"
             },
             "funding": [
                 {
@@ -7720,7 +7720,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-03T14:05:22+00:00"
+            "time": "2022-05-14T22:53:15+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
