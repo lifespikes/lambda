@@ -58,7 +58,7 @@ test('can update a customer resource', function () {
 
     $customer = $customer->refresh();
 
-    expect(collect($customer)->only('name')->toArray())->toEqual(['name' => 'John Doe 2']);
+    expect($customer->only('name'))->toEqual(['name' => 'John Doe 2']);
 });
 
 test('can get validation errors when create a customer resource', function () {
@@ -77,7 +77,6 @@ test('can delete a customer resource', function () {
     $response->assertOk();
 
     $customer = $customer->fresh();
-
 
     expect($customer)->toBeNull();
 });
