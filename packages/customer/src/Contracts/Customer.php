@@ -6,5 +6,4 @@ use Illuminate\Contracts\Support\Arrayable;
 
 interface Customer extends Arrayable
 {
-
 }

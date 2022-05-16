@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Lambda\Customer\Contracts\CustomerRepository;
 use Lambda\Customer\Models\Customer;
+use function Pest\Laravel\deleteJson;
 use function Pest\Laravel\getJson;
 use function Pest\Laravel\instance;
 use function Pest\Laravel\postJson;
@@ -29,10 +30,6 @@ test('can get all customer resources', function () {
 test('can get a customer resource', function () {
     $customer = Customer::first();
 
-    $mock = mock(CustomerRepository::class)->expect(get: fn () => $customer);
-
-    instance(CustomerRepository::class, $mock);
-
     $response = getJson('customers/'.$customer->id);
 
     $response->assertOk();
@@ -53,18 +50,34 @@ test('can create a customer resource', function () {
 });
 
 test('can update a customer resource', function () {
-    $mock = mock(CustomerRepository::class)->expect(update: fn () => true);
+    $customer = Customer::first();
 
-    instance(CustomerRepository::class, $mock);
-
-    $response = putJson('customers/1', ['name' => 'John Doe', 'email' => 'test@gmail.com', 'phone' => '123456789']);
+    $response = putJson('customers/'.$customer->id, ['name' => 'John Doe 2', 'email' => 'test@gmail.com', 'phone' => '123456789']);
 
     $response->assertOk();
 
+    $customer = $customer->refresh();
+
+    expect(collect($customer)->only('name')->toArray())->toEqual(['name' => 'John Doe 2']);
 });
 
 test('can get validation errors when create a customer resource', function () {
     $response = postJson('customers', ['name' => 'John Doe']);
 
+    $response->assertStatus(422);
+
     $response->assertJsonValidationErrors(['email', 'phone']);
+});
+
+test('can delete a customer resource', function () {
+    $customer = Customer::first();
+
+    $response = deleteJson('customers/'.$customer->id);
+
+    $response->assertOk();
+
+    $customer = $customer->fresh();
+
+
+    expect($customer)->toBeNull();
 });

@@ -22,14 +22,4 @@ class CustomerRepository implements CustomerRepositoryContract
     {
         return Customer::create($data);
     }
-
-    public function delete(string $id): bool|null
-    {
-        return $this->get($id)->delete();
-    }
-
-    public function update(string $id, array $data): bool|null
-    {
-        return $this->get($id)->update($data);
-    }
 }

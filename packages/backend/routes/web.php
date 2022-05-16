@@ -15,4 +15,4 @@ Route::get('/theme', function () {
     return Inertia::render('Theme');
 });
 
-Route::group(['middleware' => [], 'prefix' => 'customers'], __DIR__.'/customer.php');
+ Route::group(['middleware' => [], 'prefix' => '/'], __DIR__.'/customer.php');
