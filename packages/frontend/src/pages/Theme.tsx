@@ -8,12 +8,11 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react'
-import Navbar from '@/frontend/components/navbar'
+import GuestLayout from '@/frontend/components/layouts/guest'
 
 const Theme = () => {
   return (
-    <>
-      <Navbar />
+    <GuestLayout>
       <Stack p={10}>
         <Heading>Colors</Heading>
         <Text fontSize={'xs'}>
@@ -54,7 +53,7 @@ const Theme = () => {
           </Box>
         </Stack>
       </Stack>
-    </>
+    </GuestLayout>
   )
 }
 

@@ -16,3 +16,7 @@ export interface PagePropsInterface<T = CommonPagePropsInterface>
   extends Page<T & CommonPagePropsInterface> {
   test: string
 }
+
+export interface WithChildren {
+  children?: React.ReactNode
+}
