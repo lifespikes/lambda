@@ -1,0 +1,20 @@
+{
+    "name": "lambda/authentication",
+    "autoload": {
+        "psr-4": {
+            "Lambda\\Authentication\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lambda\\Authentication\\AuthenticationProvider"
+            ]
+        }
+    },
+    "require": {
+        "socialiteproviders/facebook": "^4.1",
+        "socialiteproviders/google": "^4.1",
+        "socialiteproviders/microsoft": "^4.1"
+    }
+}
