@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Lambda\Authentication\Middleware\RedirectIfAuthenticated;
 use Lambda\Backend\Http\Controllers\Password\NewPasswordController;
 use Lambda\Backend\Http\Controllers\Password\PasswordResetLinkController;
 use Lambda\Backend\Http\Controllers\RegistrationController;
 use Lambda\Backend\Http\Controllers\SessionController;
 
-Route::group(['middleware' => 'guest'], function () {
+Route::group(['middleware' => [RedirectIfAuthenticated::class]], function () {
     Route::group(['prefix' => 'login'], function () {
         Route::get('/', [SessionController::class, 'create'])->name('login');
         Route::post('/', [SessionController::class, 'store'])->name('login.store');
