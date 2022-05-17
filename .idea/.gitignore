@@ -7,3 +7,6 @@
 /dataSources/
 /dataSources.local.xml
 discord.xml
+scaffold.iml
+php.xml
+laravel-idea-personal.xml
