@@ -2,11 +2,14 @@
 
 namespace Lambda\Authentication;
 
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\UserProvider;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Lambda\Authentication\Contracts\SocialLinker as SocialLinkerContract;
 use Lambda\Authentication\Services\SocialiteAuth;
+use Lambda\Authentication\Contracts\HasProviders;
 use SocialiteProviders\Manager\SocialiteWasCalled;
 use SocialiteProviders\Microsoft\MicrosoftExtendSocialite;
 
@@ -40,6 +43,8 @@ class AuthenticationProvider extends ServiceProvider
     private function registerContainerBindings()
     {
         $this->app->bind(SocialLinkerContract::class, SocialiteAuth::class);
+        $this->app->bind(AuthenticatableContract::class, User::class);
+        $this->app->bind(HasProviders::class, User::class);
 
         $this->app->bindIf(UserProvider::class, function ($app) {
             $auth = $app->make('auth');

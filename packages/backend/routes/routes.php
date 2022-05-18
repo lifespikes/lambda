@@ -7,9 +7,9 @@ Route::group(['middleware' => 'web'], function () {
     /* Social authentication concerns */
 
     Route::controller(SocialiteController::class)->group(function () {
-        Route::get('social-auth/login/{social_linker}', 'redirect')->name(
+        Route::get('social-auth/{auth}/{social_linker}', 'redirect')->name(
             'social-auth.provider-to-redirect'
-        );
+        )->where('auth', '[login|register]+');
 
         Route::match(['get', 'post'], 'auth/{social_linker}/callback', 'callback')
             ->name('handle-provider-callback');
