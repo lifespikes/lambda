@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe275ec22bf75ad5e0660cfc03a70ba9",
+    "content-hash": "aa11a447c71d13dc612728bed2356008",
     "packages": [
         {
             "name": "brick/math",
@@ -2219,16 +2219,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.12.2",
+            "version": "v9.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b5b5c635f1a93f277b5248725a1f7ffc97e20810"
+                "reference": "87b6cc8bc41d1cf85c7c1401cddde8570a3b95bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b5b5c635f1a93f277b5248725a1f7ffc97e20810",
-                "reference": "b5b5c635f1a93f277b5248725a1f7ffc97e20810",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/87b6cc8bc41d1cf85c7c1401cddde8570a3b95bb",
+                "reference": "87b6cc8bc41d1cf85c7c1401cddde8570a3b95bb",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2400,20 +2400,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-05-11T13:38:26+00:00"
+            "time": "2022-05-17T14:07:43+00:00"
         },
         {
             "name": "laravel/serializable-closure",
-            "version": "v1.1.1",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/serializable-closure.git",
-                "reference": "9e4b005daa20b0c161f3845040046dc9ddc1d74e"
+                "reference": "09f0e9fb61829f628205b7c94906c28740ff9540"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/9e4b005daa20b0c161f3845040046dc9ddc1d74e",
-                "reference": "9e4b005daa20b0c161f3845040046dc9ddc1d74e",
+                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/09f0e9fb61829f628205b7c94906c28740ff9540",
+                "reference": "09f0e9fb61829f628205b7c94906c28740ff9540",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2465,7 +2465,7 @@
                 "issues": "https://github.com/laravel/serializable-closure/issues",
                 "source": "https://github.com/laravel/serializable-closure"
             },
-            "time": "2022-02-11T19:23:53+00:00"
+            "time": "2022-05-16T17:09:47+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -7956,16 +7956,16 @@
         },
         {
             "name": "symplify/monorepo-builder",
-            "version": "10.2.5",
+            "version": "10.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/monorepo-builder.git",
-                "reference": "a2f1a732f40961c3be41e6743a319b4070e3515b"
+                "reference": "56c5dde690d417e42bff845f35f8bb5b60bb9200"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/monorepo-builder/zipball/a2f1a732f40961c3be41e6743a319b4070e3515b",
-                "reference": "a2f1a732f40961c3be41e6743a319b4070e3515b",
+                "url": "https://api.github.com/repos/symplify/monorepo-builder/zipball/56c5dde690d417e42bff845f35f8bb5b60bb9200",
+                "reference": "56c5dde690d417e42bff845f35f8bb5b60bb9200",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -7992,7 +7992,7 @@
             ],
             "description": "Prefixed version of Not only Composer tools to build a Monorepo.",
             "support": {
-                "source": "https://github.com/symplify/monorepo-builder/tree/10.2.5"
+                "source": "https://github.com/symplify/monorepo-builder/tree/10.2.6"
             },
             "funding": [
                 {
@@ -8004,7 +8004,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-14T22:53:15+00:00"
+            "time": "2022-05-17T07:08:29+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

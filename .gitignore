@@ -16,3 +16,4 @@ package.lock
 
 # Configuration
 .env
+scripts/auth.sh

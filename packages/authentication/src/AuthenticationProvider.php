@@ -3,7 +3,7 @@
 namespace Lambda\Authentication;
 
 use Illuminate\Contracts\Auth\UserProvider;
-use Illuminate\Contracts\Foundation\CachesConfiguration;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Lambda\Authentication\Contracts\SocialLinker as SocialLinkerContract;
 use Lambda\Authentication\Services\SocialiteAuth;
@@ -24,18 +24,17 @@ class AuthenticationProvider extends ServiceProvider
 
     public function boot()
     {
-        \Event::listen(SocialiteWasCalled::class, MicrosoftExtendSocialite::class);
+        Event::listen(SocialiteWasCalled::class, MicrosoftExtendSocialite::class);
 
         $this->loadRoutesFrom(__DIR__.'/../../backend/routes/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/../../backend/routes/guest.php');
 
-        if (!($this->app instanceof CachesConfiguration && $this->app->configurationIsCached())) {
-            $config = $this->app->make('config');
+        $config = $this->app->make('config');
 
-            $config->set('socialite', [
+        $config->set('socialite', [
                 ...$config->get('auth.socialite'),
                 ...$config->get('socialite', []),
             ]);
-        }
     }
 
     private function registerContainerBindings()

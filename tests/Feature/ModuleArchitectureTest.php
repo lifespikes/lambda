@@ -29,7 +29,7 @@ function getPackages(): Collection
 }
 
 /*
- * Tests all packages except for Contracts.
+ * Tests all packages except for Contracts.pest
  */
 test('modules have no illegal dependencies', function () {
     $analyzer = (new PhpArch());

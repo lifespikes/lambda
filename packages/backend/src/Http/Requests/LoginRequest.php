@@ -22,8 +22,6 @@ class LoginRequest extends FormRequest
     {
         return [
             'email' => ['required_if:type,email', 'string', 'email'],
-            'phone_number' => ['required_if:type,phone_number', 'string'],
-            'type' => ['required', 'string', 'in:email,phone_number'],
             'password' => ['required', 'string'],
         ];
     }

@@ -2,15 +2,18 @@
   "name": "frontend",
   "version": "1.0.0",
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/poppins": "^4.5.8",
+    "@fontsource/rubik": "^4.5.9",
     "@inertiajs/inertia": "^0.11.0",
     "@inertiajs/inertia-react": "^0.8.0",
     "@inertiajs/progress": "^0.2.7",
-    "@lifespikes/js-beam": "^0.7",
     "framer-motion": "^6",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.3.1"
   }
 }

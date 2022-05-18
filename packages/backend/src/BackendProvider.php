@@ -4,7 +4,6 @@ namespace Lambda\Backend;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Inertia\Inertia;
 use LifeSpikes\PhpBeam\Support\PhpBeam;
 
 class BackendProvider extends ServiceProvider
@@ -17,8 +16,6 @@ class BackendProvider extends ServiceProvider
     {
         PhpBeam::bindInertia();
 
-        Route::get('/', function () {
-            return Inertia::render('Home');
-        });
+        Route::group(['middleware' => ['web'], 'scopeBindings' => true], __DIR__.'/../routes/web.php');
     }
 }

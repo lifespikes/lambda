@@ -1,0 +1,15 @@
+{
+    "name": "lambda/customer",
+    "autoload": {
+        "psr-4": {
+            "Lambda\\Customer\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lambda\\Customer\\CustomerProvider"
+            ]
+        }
+    }
+}

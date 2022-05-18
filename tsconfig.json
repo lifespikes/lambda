@@ -19,7 +19,10 @@
       "@php-beam/*": [
         "./*"
       ],
-      "@frontend/*": [
+      "@spikeform/*": [
+        "./packages/spikeform/src/*"
+      ],
+      "@/frontend/*": [
         "./packages/frontend/src/*"
       ]
     }
