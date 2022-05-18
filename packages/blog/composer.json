@@ -1,0 +1,15 @@
+{
+    "name": "lambda/blog",
+    "autoload": {
+        "psr-4": {
+            "Lambda\\Blog\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lambda\\Blog\\BlogProvider"
+            ]
+        }
+    }
+}

@@ -4,6 +4,7 @@
     <option name="generationStringOptionValues">
       <map>
         <entry key="createController.singleAction" value="1" />
+        <entry key="createDatabaseMigration.anonymous" value="1" />
       </map>
     </option>
     <option name="helperCode">

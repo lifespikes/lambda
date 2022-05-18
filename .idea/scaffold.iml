@@ -3,6 +3,8 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/packages/backend/src" isTestSource="false" packagePrefix="Lambda\Backend\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/blog/src" isTestSource="false" packagePrefix="Lambda\Blog\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/customer/src" isTestSource="false" packagePrefix="Lambda\Customer\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/commonmark" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ramsey/collection" />

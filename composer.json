@@ -17,6 +17,7 @@
     "autoload": {
         "psr-4": {
             "Lambda\\Backend\\": "packages/backend/src",
+            "Lambda\\Blog\\": "packages/blog/src",
             "Lambda\\Customer\\": "packages/customer/src"
         }
     },
@@ -50,6 +51,7 @@
         "laravel": {
             "providers": [
                 "Lambda\\Customer\\CustomerProvider",
+                "Lambda\\Blog\\BlogProvider",
                 "Lambda\\Backend\\BackendProvider"
             ]
         },
@@ -62,6 +64,7 @@
     },
     "replace": {
         "lambda/backend": "self.version",
+        "lambda/blog": "self.version",
         "lambda/customer": "self.version"
     },
     "version": "1.1.1",
