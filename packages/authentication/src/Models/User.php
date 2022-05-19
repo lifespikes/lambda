@@ -5,7 +5,6 @@ namespace Lambda\Authentication\Models;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as BaseUser;
 use Lambda\Authentication\Contracts\HasProviders;
-use Lambda\Authentication\Contracts\UserProvider;
 
 class User extends BaseUser implements HasProviders
 {
@@ -22,7 +21,6 @@ class User extends BaseUser implements HasProviders
         $this->socialAccounts()->create([
             'provider_id' => $provider->getId(),
             'provider_name' => $providerName,
-            'user_id' => $this->id,
         ]);
     }
 }

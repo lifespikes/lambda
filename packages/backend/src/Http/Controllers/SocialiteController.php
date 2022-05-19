@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Lambda\Authentication\Contracts\SocialLinker;
 use Lambda\Authentication\Services\CreateUserWithSocialite;
+use Lambda\Authentication\Services\LinkWithSocialite;
+use Lambda\Authentication\Services\UnlinkWithSocialite;
 use LifeSpikes\LaravelBare\Http\Controller;
 
 class SocialiteController extends Controller
@@ -40,16 +42,27 @@ class SocialiteController extends Controller
 
             return app(CreateUserWithSocialite::class)->execute($providerName, $socialiteUser);
         }
+        if ('link' == $registerOrLogin) {
+            $socialiteUser = $provider->user();
 
-        /*if (($user = Auth::user())) {
-            $linker->link($user, $provider->user());
-        } else {
-            throw_if(
-                !($appUser = $linker->find($provider->user())),
-                'There are no users linked to your account.'
-            );
+            return app(LinkWithSocialite::class)->execute($providerName, $socialiteUser);
+        }
+    }
 
-            Auth::login($appUser);
-        } */
+    public function linkProvider(SocialLinker $socialLinker, $providerName)
+    {
+        Session::put('user', auth()->user());
+        Session::put('registerOrLogin', 'link');
+
+        $socialLinker->setDriver($providerName);
+
+        return $socialLinker->driver()->redirect();
+    }
+
+    public function unlinkProvider(string $providerName)
+    {
+        Session::put('user', auth()->user());
+
+        return app(UnlinkWithSocialite::class)->execute($providerName);
     }
 }
