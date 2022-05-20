@@ -10,3 +10,8 @@ discord.xml
 scaffold.iml
 php.xml
 laravel-idea-personal.xml
+
+# Everything except inspections
+*.xml
+!inspectionProfiles/Project_Default.xml
+!watcherTasks.xml
