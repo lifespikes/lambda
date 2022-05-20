@@ -11,8 +11,7 @@ class UnlinkWithSocialite
 {
     public function execute(string $providerName)
     {
-        // $user = Session::get('user');
-        $user = User::find(1);
+        $user = Session::get('user');
         $socialiteUser = SocialAccount::whereProviderName($providerName)->whereUserId($user->id)->first();
         // Check user exist and delete socialite user
         if ($socialiteUser) {
