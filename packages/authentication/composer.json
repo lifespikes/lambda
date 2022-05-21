@@ -16,6 +16,6 @@
         "socialiteproviders/facebook": "^4.1",
         "socialiteproviders/google": "^4.1",
         "socialiteproviders/microsoft": "^4.1",
-        "illuminate/auth": "^9.0"
+        "laravel/framework": "^9.0"
     }
 }

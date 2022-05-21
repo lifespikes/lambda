@@ -29,11 +29,11 @@ function getPackages(): Collection
 }
 
 /*
- * Tests all packages except for Contracts.pest
+ * Tests all packages except for Contracts.
  */
 test('modules have no illegal dependencies', function () {
     $analyzer = (new PhpArch());
-    ($arch = (new Architecture()))
+    ($arch = new Architecture())
         ->addComposerBasedComponent(...pkg('contracts'));
 
     getPackages()->each(

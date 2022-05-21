@@ -1,6 +1,7 @@
 <?php
 
 use LifeSpikes\LaravelBare\Testing\TestCase;
+use function Pest\Laravel\instance;
 
 const BASE_DIR = __DIR__.'/..';
 const PACKAGES_DIR = __DIR__.'/../packages';
@@ -44,7 +45,37 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+/**
+ * Get a property's value regardless of its visibility.
+ */
+function getPropValue($object, $property)
 {
-    // ..
+    return (new ReflectionObject($object))
+        ->getProperty($property)
+        ->getValue($object);
+}
+
+/**
+ * Fabricates a mock object.
+ */
+function make(string $class, array $props = [], array $expects = [])
+{
+    $mock = mock($class)->expect(...$expects);
+    $object = new ReflectionObject($mock);
+
+    foreach ($props as $key => $value) {
+        $prop = $object->getProperty($key);
+        $prop->setValue($mock, $value);
+    }
+
+    return $mock;
+}
+
+/**
+ * Fabricates a mock and replaces its instance
+ * in the service container.
+ */
+function fake(string $class, array $props = [], array $expects = []): object
+{
+    return instance($class, make($class, $props, $expects));
 }

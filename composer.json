@@ -4,9 +4,14 @@
     "require": {
         "php": "^8.1.2",
         "friendsofphp/php-cs-fixer": "^3.8",
+        "illuminate/auth": "^9.0",
+        "laravel/framework": "^9.0",
         "laravel/socialite": "^5.5",
+        "lifespikes/laravel-bare": "^0.7",
         "lifespikes/monorepo-cli": "^0.7",
         "lifespikes/php-beam": "^0.7",
+        "socialiteproviders/facebook": "^4.1",
+        "socialiteproviders/google": "^4.1",
         "socialiteproviders/microsoft": "^4.1"
     },
     "require-dev": {
@@ -20,6 +25,7 @@
         "psr-4": {
             "Lambda\\Authentication\\": "packages/authentication/src",
             "Lambda\\Backend\\": "packages/backend/src",
+            "Lambda\\Contracts\\": "packages/contracts/src",
             "Lambda\\Customer\\": "packages/customer/src"
         }
     },
@@ -52,9 +58,9 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Lambda\\Backend\\BackendProvider",
+                "Lambda\\Customer\\CustomerProvider",
                 "Lambda\\Authentication\\AuthenticationProvider",
-                "Lambda\\Customer\\CustomerProvider"
+                "Lambda\\Backend\\BackendProvider"
             ]
         },
         "monorepo-cli": {
@@ -67,6 +73,7 @@
     "replace": {
         "lambda/authentication": "self.version",
         "lambda/backend": "self.version",
+        "lambda/contracts": "self.version",
         "lambda/customer": "self.version"
     },
     "version": "1.1.1",

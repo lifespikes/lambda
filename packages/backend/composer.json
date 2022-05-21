@@ -11,5 +11,10 @@
                 "Lambda\\Backend\\BackendProvider"
             ]
         }
+    },
+    "require": {
+        "laravel/framework": "^9.0",
+        "lifespikes/laravel-bare": "^0.7",
+        "lifespikes/php-beam": "^0.7"
     }
 }

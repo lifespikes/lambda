@@ -13,5 +13,6 @@ laravel-idea-personal.xml
 
 # Everything except inspections
 *.xml
+lambda.iml
 !inspectionProfiles/Project_Default.xml
 !watcherTasks.xml

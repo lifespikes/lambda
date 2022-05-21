@@ -2,14 +2,17 @@
 
 namespace Lambda\Authentication;
 
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\UserProvider;
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
-use Lambda\Authentication\Contracts\SocialLinker as SocialLinkerContract;
-use Lambda\Authentication\Services\SocialiteAuth;
-use Lambda\Authentication\Contracts\HasProviders;
+use Lambda\Authentication\Models\SocialIdentity;
+use Lambda\Authentication\Models\User;
+use Lambda\Authentication\Services\SocialRepository;
+use Lambda\Authentication\Services\UserRepository;
+use Lambda\Contracts\Authentication\SocialIdentity as SocialIdentityContract;
+use Lambda\Contracts\Authentication\SocialRepository as SocialLinkerContract;
+use Lambda\Contracts\Authentication\UserRepository as UserRepositoryContract;
 use SocialiteProviders\Manager\SocialiteWasCalled;
 use SocialiteProviders\Microsoft\MicrosoftExtendSocialite;
 
@@ -18,33 +21,19 @@ class AuthenticationProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/auth.php', 'auth');
+
         $this->loadViewsFrom(__DIR__.'/../views', 'authentication');
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
 
-        $this->registerSocialiteProviders();
         $this->registerContainerBindings();
-    }
-
-    public function boot()
-    {
-        Event::listen(SocialiteWasCalled::class, MicrosoftExtendSocialite::class);
-
-        $this->loadRoutesFrom(__DIR__.'/../../backend/routes/routes.php');
-        $this->loadRoutesFrom(__DIR__.'/../../backend/routes/guest.php');
-
-        $config = $this->app->make('config');
-
-        $config->set('socialite', [
-                ...$config->get('auth.socialite'),
-                ...$config->get('socialite', []),
-            ]);
     }
 
     private function registerContainerBindings()
     {
-        $this->app->bind(SocialLinkerContract::class, SocialiteAuth::class);
-        $this->app->bind(AuthenticatableContract::class, User::class);
-        $this->app->bind(HasProviders::class, User::class);
+        $this->app->bind(SocialLinkerContract::class, SocialRepository::class);
+        $this->app->bind(SocialIdentityContract::class, SocialIdentity::class);
+        $this->app->bind(UserRepositoryContract::class, UserRepository::class);
+        $this->app->bind(Authenticatable::class, User::class);
 
         $this->app->bindIf(UserProvider::class, function ($app) {
             $auth = $app->make('auth');
@@ -56,6 +45,12 @@ class AuthenticationProvider extends ServiceProvider
                 )
             );
         });
+    }
+
+    public function boot()
+    {
+        Event::listen(SocialiteWasCalled::class, MicrosoftExtendSocialite::class);
+        $this->registerSocialiteProviders();
     }
 
     private function registerSocialiteProviders()

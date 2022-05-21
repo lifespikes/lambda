@@ -2,25 +2,25 @@
 
 namespace Lambda\Authentication\Models;
 
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as BaseUser;
-use Lambda\Authentication\Contracts\HasProviders;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Lambda\Authentication\Models\Factories\UserFactory;
 
-class User extends BaseUser implements HasProviders
+class User extends BaseUser
 {
-    protected $fillable = ['name', 'email', 'password'];
+    use HasFactory;
+
+    protected $table = 'users';
     protected $guarded = [];
 
-    public function socialAccounts(): HasMany
+    protected static function newFactory(): UserFactory
     {
-        return $this->hasMany(SocialAccount::class);
+        return UserFactory::new();
     }
 
-    public function addSocialAccount($provider, $providerName): void
+    public function identities(): HasMany
     {
-        $this->socialAccounts()->create([
-            'provider_id' => $provider->getId(),
-            'provider_name' => $providerName,
-        ]);
+        return $this->hasMany(Identity::class);
     }
 }
