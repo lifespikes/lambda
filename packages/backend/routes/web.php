@@ -1,18 +1,22 @@
 <?php
 
+/**
+ * Primary route file, routes should be grouped in other
+ * files and included here.
+ */
+
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Home');
-});
 
-Route::get('/spikeform', function () {
-    return Inertia::render('Spikeform');
-});
+// Home route, probably will change later
+Route::inertia('/', 'Home');
 
-Route::get('/theme', function () {
-    return Inertia::render('Theme');
-});
+// Routes used for development purposes. Disabled on production environments.
+if ('local' !== app()->environment()) {
+    Route::module('local');
+}
 
- Route::group(['middleware' => [], 'prefix' => '/'], __DIR__.'/customer.php');
+// All other routes go here
+
+Route::module('authentication');
+Route::module('customer');

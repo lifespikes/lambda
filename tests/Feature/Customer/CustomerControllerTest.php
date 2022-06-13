@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Lambda\Customer\Contracts\CustomerRepository;
+use Lambda\Contracts\Customers\CustomerRepository;
 use Lambda\Customer\Models\Customer;
 use function Pest\Laravel\deleteJson;
 use function Pest\Laravel\getJson;
@@ -30,11 +30,9 @@ test('can get all customer resources', function () {
 test('can get a customer resource', function () {
     $customer = Customer::first();
 
-    $response = getJson('customers/'.$customer->id);
-
-    $response->assertOk();
-
-    $response->assertJsonStructure(['name', 'email', 'phone']);
+    getJson('customers/'.$customer->id)
+        ->assertOk()
+        ->assertJsonStructure(['name', 'email', 'phone']);
 });
 
 test('can create a customer resource', function () {

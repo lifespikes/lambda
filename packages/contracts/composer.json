@@ -1,0 +1,8 @@
+{
+    "name": "lambda/contracts",
+    "autoload": {
+        "psr-4": {
+            "Lambda\\Contracts\\": "src"
+        }
+    }
+}

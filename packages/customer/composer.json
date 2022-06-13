@@ -11,5 +11,8 @@
                 "Lambda\\Customer\\CustomerProvider"
             ]
         }
+    },
+    "require": {
+        "laravel/framework": "^9.0"
     }
 }

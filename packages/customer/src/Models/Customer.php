@@ -3,7 +3,7 @@
 namespace Lambda\Customer\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Lambda\Customer\Contracts\Customer as CustomerContract;
+use Lambda\Contracts\Customers\Customer as CustomerContract;
 
 class Customer extends Model implements CustomerContract
 {

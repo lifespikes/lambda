@@ -1,6 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Lambda\Backend\Controllers\Customer\CustomerController;
+use Lambda\Backend\Http\Controllers\Customer\CustomerController;
 
-Route::apiResource('/customers', CustomerController::class);
+Route::apiResource('customers', CustomerController::class);
